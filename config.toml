@@ -55,7 +55,7 @@ publishDir = "public"
     weight = 3
 
 [[menu.icon]]
-    url = "https://www.linkedin.com/in/thiago-silvino-3934a222"
+    url = "https://www.linkedin.com/in/tdmsilvino"
     name = "linkedin"
     weight = 4
 
