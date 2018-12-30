@@ -8,4 +8,4 @@ No dia 19 de setembro de 2013 eu ministrei uma palestra sobre Software Livre e C
 
 Estou postando os slides da palestra assim você pode ter uma idéia do que foi apresentado.
 
-Acesse os slides nesse link: [Software Livre e Código Aberto](http://silvino.net/wp-content/uploads/2013/09/Software_Livre_e_Codigo_Aberto.pdf).
+Acesse os slides nesse link: [Software Livre e Código Aberto](https://silvino.net/2013/Software_Livre_2013.pdf).
