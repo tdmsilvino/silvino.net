@@ -40,7 +40,7 @@ publishDir = "public"
 # The "name" field should match the name of the icon to be used
 # The list of available icons can be found at http://fontawesome.io/icons/
 [[menu.icon]]
-    url = "https://twitter.com/tdmsilvino/"
+    url = "https://twitter.com/tdmsilvino"
     name = "twitter"
     weight = 1
 
@@ -50,7 +50,7 @@ publishDir = "public"
     weight = 2
 
 [[menu.icon]]
-    url = "https://github.com/tdmsilvino/"
+    url = "https://github.com/tdmsilvino"
     name = "github"
     weight = 3
 
