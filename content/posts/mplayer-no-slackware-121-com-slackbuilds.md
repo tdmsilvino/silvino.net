@@ -14,17 +14,13 @@ Porém devemos tomar cuidados com as dependências.
 
 Por exemplo, antes de instalar o Mplayer você de ter os pacotes do Lame, que é usado pelo mencoder para gerar audio em mp3, e da biblioteca Libdvdnav, que é usada ler DVDs e os codecs do Mplayer instalados previamente.
 
-A seguir os links para os Slackbuilds: Lame: [http://slackbuilds.org/repository/12.1/libraries/lame/](http://slackbuilds.org/repository/12.1/libraries/lame/ "Slackbuild para o Lame") Libdvdnav: [http://slackbuilds.org/repository/12.1/libraries/libdvdnav/](http://slackbuilds.org/repository/12.1/libraries/libdvdnav/ "Slackbuild da biblioteca libdvdnav") Todos os codecs para o Mplayer: [http://slackbuilds.org/repository/12.1/multimedia/mplayer-codecs-all/](http://slackbuilds.org/repository/12.1/multimedia/mplayer-codecs-all/ "Slackbuild para os codecs do Mplayer") Em cada um dos links citados você deve executar os passos abaixo: 1.
+A seguir os links para os Slackbuilds: Lame: [http://slackbuilds.org/repository/12.1/libraries/lame/](http://slackbuilds.org/repository/12.1/libraries/lame/ "Slackbuild para o Lame") Libdvdnav: [http://slackbuilds.org/repository/12.1/libraries/libdvdnav/](http://slackbuilds.org/repository/12.1/libraries/libdvdnav/ "Slackbuild da biblioteca libdvdnav") Todos os codecs para o Mplayer: [http://slackbuilds.org/repository/12.1/multimedia/mplayer-codecs-all/](http://slackbuilds.org/repository/12.1/multimedia/mplayer-codecs-all/ "Slackbuild para os codecs do Mplayer") Em cada um dos links citados você deve executar os passos abaixo: 
 
-Fazer o download do Slackbuild e descompactá-lo, isso criará um diretório com o nome do Slackbuild.
+1. Fazer o download do Slackbuild e descompactá-lo, isso criará um diretório com o nome do Slackbuild.
 
-2.
+2. Depois você deve fazer o download do código fonte compactado (Download Source) e salvá-lo dentro do diretório do Slackbuild.
 
-Depois você deve fazer o download do código fonte compactado (Download Source) e salvá-lo dentro do diretório do Slackbuild.
-
-3.
-
-Abrir um terminal e entrar no diretório do Slackbuild (supondo que o diretório está no seu Desktop "**cd ~/Desktop/<nome\_do\_slackbuild>**") 4\.
+3. Abrir um terminal e entrar no diretório do Slackbuild (supondo que o diretório está no seu Desktop "**cd ~/Desktop/<nome\_do\_slackbuild>**") 4\.
 
 Logar como root, com o comando "**su root**" 5\.
 
