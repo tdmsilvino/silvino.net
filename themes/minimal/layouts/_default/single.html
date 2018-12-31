@@ -45,9 +45,9 @@
     </div>
     <script type="text/javascript">
     $(document).ready(function(){
-       var webmention = "https://webmention.io/api/mentions.jf2?";
+       var webmention = "https://webmention.io/api/mentions.jf2?target=";
        post_url = window.location.href;
-       $.getJSON(webmention + "target=" + post_url + "/", function(data){
+       $.getJSON(webmention + post_url, function(data){
         if (data["children"] != null) {
             //console.log(data["children"][0]);
             var mention_items = [];
@@ -55,9 +55,9 @@
             if (val["wm-property"].includes("reply")) {
                 var action = val["wm-property"].replace("-"," ").replace("-"," ");
             } else {
-                var action = val["wm-property"].replace("-of","") + "ed";     
+                var action = val["wm-property"].replace("-of","") + "ed";
             };
-            mention_items.push( "<li><a href='" + val["author"]["url"] + "'>" + val["author"]["name"] + "</a>" + action + " " + val["url"] + "</li>" );
+            mention_items.push( "<li><a href='" + val["author"]["url"] + "'>" + val["author"]["name"] + "</a> " + action + " <a href='" + val["url"] + "'>" + val["url"] +"</a></li>" );
             });
          };
          $("#post-mentions").show("fast");
