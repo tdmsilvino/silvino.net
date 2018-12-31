@@ -10,7 +10,7 @@ Primeiramente ajustei as configurações de e-mail, que está hospedado no servi
 
 A segunda coisa que fiz, foi tratar de habilitar HTTPS. E fiz isso usando uma conta gratuita na CND [CloudFlare](https://www.cloudflare.com/). Além do HTTPS, ganhei o uso do cache da CDN que ajuda muito na performance do site.
 
-Por último tratei de migrar o blog. Deixei de usar o Pelican como gerador das páginas estáticas, e passei a usar o [Hugo](https://gohugo.io/). A migração foi finalizada com ontem, 30/12/2018, com sucesso.
+Por último tratei de migrar o blog. Deixei de usar o Pelican como gerador das páginas estáticas, e passei a usar o [Hugo](https://gohugo.io/). A migração foi finalizada ontem, 30/12/2018, com sucesso.
 
 Deixei de usar o GitHub Pages, para hospedar as páginas, e agora estou usando uma conta gratuita na  [Netlify](https://www.netlify.com/). Tudo ficou muito simples.
  Escrevo as páginas localmente e faço um push para o meu repositório no GitHub, a Netlify detecta as alterações no repositório, e gera as páginas usando o Hugo.
