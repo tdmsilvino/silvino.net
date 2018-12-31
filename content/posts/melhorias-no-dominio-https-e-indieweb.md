@@ -22,6 +22,7 @@ Além disso consegui habilitar o uso das [Webmentions](https://indieweb.org/Webm
 Para isso o usei o endpoint e o script criado por [Pelle](https://voxpelli.com/2013/12/webmentions-for-static-pages/). Realizei alguns testes e está funcionando bem.
 
 Agora aos próximos passos:
+
 1. Quero testar um método de postagem simplificada, para que eu possa escrever artigos com mais frequencia.
 2. Desejo testar a integração com o serviço [Brid.gy](https://brid.gy/), para receber Webmentions para reações nas redes sociais.
 3. Também quero usar o padrão [Micropub](https://indieweb.org/Micropub) para realizar os meus posts.
