@@ -10,7 +10,7 @@ publishDir = "public"
     author = "Thiago Silvino"
     description = "Idiomas, Software Livre, Redes, e Automação"
     githubUsername = "tdmsilvino"
-    accent = "darkblue"
+    accent = "black"
     showBorder = true
     backgroundColor = "white"
     font = "Roboto" # should match the name on Google Fonts!
@@ -45,18 +45,18 @@ publishDir = "public"
     weight = 1
 
 [[menu.icon]]
-    url = "mailto:thiago@silvino.net"
-    name = "envelope-o"
-    weight = 2
-
-[[menu.icon]]
     url = "https://github.com/tdmsilvino"
     name = "github"
-    weight = 3
+    weight = 2
 
 [[menu.icon]]
     url = "https://www.linkedin.com/in/tdmsilvino"
     name = "linkedin"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://www.facebook.com/tdmsilvino"
+    name = "facebook-f"
     weight = 4
 
 [[menu.icon]]
@@ -65,11 +65,11 @@ publishDir = "public"
     weight = 5
 
 [[menu.icon]]
-    url = "https://www.facebook.com/tdmsilvino"
-    name = "facebook-f"
-    weight = 6
-
-[[menu.icon]]
     url = "https://stackoverflow.com/users/4490483/thiago-silvino"
     name = "stack-overflow"
+    weight = 6
+    
+[[menu.icon]]
+    url = "mailto:thiago@silvino.net"
+    name = "envelope-o"
     weight = 7

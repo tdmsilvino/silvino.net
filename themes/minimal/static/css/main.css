@@ -7,6 +7,7 @@ body {
     display: flex;
     text-align: center;
     flex-direction: column;
+    font-size: 100%
 }
 
 main {
@@ -30,7 +31,7 @@ main {
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    font-size: 6vh;
 }
 
 .intro > h2 {
@@ -42,6 +43,14 @@ main {
     width: 10vh;
     height: 10vh;
     border-radius: 50%;
+}
+
+.item h4 a {
+    font-size: 1.4em;
+}
+
+p {
+    font-size: 1.3em;
 }
 
 /*apply accent colour to links*/
