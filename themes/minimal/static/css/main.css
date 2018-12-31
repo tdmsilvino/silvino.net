@@ -49,6 +49,14 @@ main {
     font-size: 1.4em;
 }
 
+.post-title {
+    font-size: 1.5em;
+}
+
+.item-tag {
+    font-size: 0.7em;
+}
+
 p {
     font-size: 1.3em;
 }
@@ -98,6 +106,10 @@ a:hover {
 
 .navbar.navbar-default {
     border-top: var(--border-width) solid var(--accent);
+}
+
+.post-date {
+    font-size: 1em;
 }
 
 footer {

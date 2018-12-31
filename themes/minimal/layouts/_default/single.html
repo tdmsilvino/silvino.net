@@ -1,11 +1,34 @@
 {{ partial "header" . }}
-
+{{ $baseurl := .Site.BaseURL | sanitizeurl }}
+{{ $author := .Site.Params.Author }}
+{{ if .Params.Author }}
+    {{ $author = .Params.Author }}
+{{ end }}
 <main>
-
-    {{ partial "list-item" . }}
-
-    <br> <div class="text-justify">{{ .Content }}</div>
-
+<div id="content">
+    <article class="h-entry">
+        <header>
+            <h4 class="post-title p-name">{{ .Title }}</h4>
+                {{ if not .Params.Menu }}
+            <p class="post-date">
+                <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+                {{ .PublishDate.Format "2 January, 2006" }}
+                </time> {{ if $author }} by <a href="{{ .Site.BaseURL }}" class="p-author h-card" rel="author">{{ $author }}</a>{{ end }}
+            </p>
+            {{ end }}
+            {{ if .Params.tags }}
+            <hr class="post-underline">
+            <p class="post-tag">
+            {{ range .Params.tags }}
+                <a href="{{ $baseurl }}/tags/{{ . | urlize }}" class="post-tag p-category"><kbd class="item-tag">{{ . }}</kbd></a>
+            {{ end }}
+            </p>
+            {{ end }}
+        </header>
+    <br>         
+    <section class="content e-content">
+    <div class="text-justify">{{ .Content }}</div>
+    </section>
     <!-- related posts with the same tags -->
     {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
 
