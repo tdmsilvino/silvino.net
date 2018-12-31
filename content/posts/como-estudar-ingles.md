@@ -1,6 +1,6 @@
 ---
 title: 'Como estudar inglês'
-date: Sab, 19 Oct 2013 23:57:44 +0000
+date: Sat, 19 Oct 2013 02:57:44 -0002
 draft: false
 tags: [inglês]
 ---
