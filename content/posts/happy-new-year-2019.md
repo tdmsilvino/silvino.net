@@ -10,18 +10,12 @@ Hey there,
 
 It's 2019! Happy New Year to all of you!
 
-
-
 Hola,
 
 Ahora estamos en 2019! Feliz año nuevo para todos ustedes!
-
-
 
 Olá,
 
 Agora estamos em 2019! Feliz ano novo para todos vocês!
 
-
-
-![Fireworks Praia Grande, SP, Brazil](/img/uploads/20190101_022440.jpg "Fireworks Praia Grande, SP, Brazil")
+<img src="/img/uploads/20190101_022440.jpg" style="width:30em">
