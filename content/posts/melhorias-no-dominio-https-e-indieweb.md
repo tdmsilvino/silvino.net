@@ -24,7 +24,7 @@ Também fiz algumas alterações no layout e habilitei novas funções da [Indie
 Além disso consegui habilitar o uso das [Webmentions](https://indieweb.org/Webmention), que permite que outras pessoas com domínios proprietários façam menções diretamente ao meu domínio.
 Para isso o usei o endpoint e o script criado por [Pelle](https://voxpelli.com/2013/12/webmentions-for-static-pages/). Realizei alguns testes e está funcionando bem.
 
-_Atualização 01/01/2019: Alterei o endpoint do Webmentions para \[webmention.io](https://webmention.io). Por ser uma solução mais robusta._
+_Atualização 01/01/2019: Alterei o endpoint do Webmentions para [webmention.io](https://webmention.io). Por ser uma solução mais robusta._
 
 Agora aos próximos passos:
 
