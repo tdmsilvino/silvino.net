@@ -7,7 +7,7 @@ tags:
 ---
 One of the good things that you get when you have your own domain is that you can experiment with any crazy idea that comes to your mind, when it comes to publishing content.
 
-So why not use a DNS server to keep the New Year's resolution? After all, the DNS server is there for resolutions (pun intended).
+So why not use a DNS server to keep the New Year's resolution list? After all, the DNS server is there for resolutions (pun intended).
 
 The DNS sysmtems have the hability to keep TXT records, and domain administrators use them to setup mail protection (SPF, DMARC, DKIM), to valided the domain ownership when siging a new service. Some of them also add entries with the slogan of a company or the company's name.
 
