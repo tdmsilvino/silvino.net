@@ -60,11 +60,6 @@ publishDir = "public"
     weight = 4
 
 [[menu.icon]]
-    url = "https://plus.google.com/u/0/+ThiagoSilvino"
-    name = "google-plus-square"
-    weight = 5
-
-[[menu.icon]]
     url = "https://stackoverflow.com/users/4490483/thiago-silvino"
     name = "stack-overflow"
     weight = 6
