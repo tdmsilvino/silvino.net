@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
+</script>
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
+</script>
+</head>
+
+<body onload="brython()">
+<script type="text/python">
+from browser import alert, document, html
+
+def mac_format(entry,separator):
+    mac = []
+    save_chars = ''
+    if separator == '.':
+        divideby = 4
+    else:
+        divideby = 2
+    for i, letter in enumerate(entry):
+        if (i + 1) % divideby == 0:
+            save_chars += letter
+            mac.append(save_chars)
+            save_chars = ''
+        else:
+            save_chars += letter
+    if document["upper"].checked:
+        formatted = separator.join(mac).upper()
+    else:
+        formatted = separator.join(mac).lower()
+    document["output"].value += formatted + '\n'
+
+def check_macs(ev):
+    document["output"].value = ""
+    macs = document["macs"].value
+    dotless = macs.replace('.','')
+    dashless = dotless.replace('-','')
+    colonless = dashless.replace(':','')
+
+    for mac in colonless.splitlines():
+        sep = document["format"].value
+        mac_format(mac,sep)
+            
+document["format"].bind("change",check_macs)
+document["upper"].bind("change",check_macs)
+</script>
+<div style="float:left;width=300px;border-color:black">
+    <label for="macs">MACs:<br>
+        <textarea id="macs" cols='16' rows='10'">aabbccddeeff</textarea>
+</div>
+<div style="float:left;width=300px;border-color:black;margin: 15px;">
+    <label for="format"><span>Separador:</span><br>
+    <select name="format" id="format">
+		<option value=".">. ponto</option>
+		<option value=":">: dois-pontos</option>
+		<option value="-">- traço</option>
+	</select>
+    </label>
+    <br>
+    <label>
+        <span>Maiúsculas</span>
+        <input type="checkbox" value="upper" name="upper" id="upper">
+    </label>
+</div>
+<div style="float:left;width=300px;border-color:black">
+    <label for="output">Resultado:<br>
+    <textarea id="output" cols='18' rows='10' readonly></textarea></label>
+</div>
+</body>
+
+</html>
