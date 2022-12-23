@@ -28,29 +28,33 @@ from browser.html import *
 cl_btn = "waves-effect waves-light btn-large"
 attr_btn = dict(href="#",Class=cl_btn)
 
-container = DIV(id="container",Class="container")
+container = DIV(id="container",Class="container",
+                style="width: 340px;")
 
 lines = ["789/",
          "456*",
          "123-",
          "0.=+"]
 
-calc = TABLE(Class="border: 0; padding: 0")
-calc <= TR(TH(DIV("0", id="result"), colspan=3) +
+calc = TABLE(style="border-collapse: unset;")
+calc <= TR(TH(DIV("0", id="result",Class="light-blue darken-2",
+            style="height: 54px; text-align: center; padding: 14px 0;"), colspan=3) +
                 TD(A("C", id="clear",**attr_btn)))
 
 calc <= (TR(TD(A(x,**attr_btn)) for x in line) for line in lines)
 
 container <= calc
-container <= SPAN("0",id="value1")
-container <= SPAN("",id="operation")
-container <= SPAN("0",id="value2")
+container <= SPAN("0",id="value1",style="display: none")
+container <= SPAN(" ",id="operation",style="display: none")
+container <= SPAN("0",id="value2",style="display: none")
+container <= SPAN("0",id="set_value2",style="display: none")
 document <= container
 
 result = document["result"]
 value1 = document["value1"]
 value2 = document["value2"]
 operation = document["operation"]
+set_value2 = document["set_value2"]
 
 def calculate(v1, v2, oper):
     if oper == "+":
@@ -60,15 +64,17 @@ def calculate(v1, v2, oper):
     elif oper == "*":
         return v1 * v2
     elif oper == "/":
-        if value2 != 0:
+        if v2 != 0:
             return v1 / v2
         else:
-            return "Impossível dividir por zero!"
+            return "Impossível!"
 
 def zeroize():
     value1.text = "0"
     value2.text = "0"
-    operation.text = ""
+    operation.text = " "
+    set_value2.text = "0"
+    result.text = "0"
 
 def clicked(event):
     """ Performs calculation """
@@ -77,13 +83,27 @@ def clicked(event):
     value = btn.text
     
     if value == "C":
-        value1.text = "0"
-        value2.text = "0"
-        operation.text = ""
-        result.text = 0
+        zeroize()
     elif value in "+-*/":
         value1.text = result.text
         operation.text = value
+        set_value2.text = "1"
+    elif value == '.':
+        if "." in result.text:
+            return
+        if set_value2.text == "1":
+            result.text = "0."
+            set_value2.text = "0"
+        elif result.text == "Impossível!":
+            result.text = "0."
+        elif result.text == "0":
+            result.text += value
+        elif "." not in result.text:
+            result.text += value
+        elif value1.text != "0" and operation.text != " ":
+            result.text += value
+        else:
+            return
     elif value == "=":
         value2.text = result.text
         r = calculate(float(value1.text), 
@@ -91,11 +111,17 @@ def clicked(event):
                                 operation.text)
         value1.text = "0"
         value2.text = "0"
-        result.text = f"{r:.2f}"
-
+        set_value2.text = "0"
+        if r == "Impossível!":
+            result.text = f"{r}"
+        else:
+            result.text = f"{r:.2f}"
     else:
-        if result.text == "0" or operation.text != "":
+        if result.text == "0" or result.text == "Impossível!":
             result.text = value
+        elif set_value2.text == "1":
+            result.text = value
+            set_value2.text = "0"
         else:
             result.text += value
 
