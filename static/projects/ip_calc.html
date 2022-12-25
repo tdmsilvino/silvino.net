@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
+    </script>
+</head>
+
+<body onload="brython()">
+
+<script type="text/python">
+from browser import document, alert
+from browser.html import *
+import ip_calc
+
+def calculate(event):
+    addr = document["ipv4"].value
+    result = document["result"]
+    result.text = ""
+    addr_info = ip_calc.address_info(addr)
+    if not addr_info:
+        result <= P(f"'{addr}'' is not a valid IPv4.")
+    else:
+        results = UL(LI(f'{k}:\t{v}') for k, v in addr_info.items())
+        result <= results
+
+def clear(event):
+    document["ipv4"].value = ""
+    document["result"].text = ""
+
+cl_btn = "waves-effect waves-light btn"
+attr_btn = dict(href="#",Class=cl_btn)
+
+container = DIV(id="container",Class="container",
+                style="width: 340px;")
+container <= H1("ip_calc")
+form = FORM()
+fields = [SPAN("IPv4 Address:"),INPUT(id="ipv4",value="192.168.0.1/24")]
+form <= LABEL(fields)
+form <= A("Calculate", id="calculate", **attr_btn)
+form <= A("Clear", id="clear", style="margin-left:10px", **attr_btn)
+container <= form
+container <= DIV(id="result")
+document <= container
+       
+document["calculate"].bind("click", calculate)
+document["clear"].bind("click", clear)
+
+</script>
+</body>
+
+</html>
