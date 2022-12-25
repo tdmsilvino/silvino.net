@@ -3,6 +3,8 @@
 
 <head>
 <meta charset="utf-8">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <script type="text/javascript"
 src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
 </script>
@@ -49,6 +51,7 @@ def check_macs(ev):
 document["format"].bind("change",check_macs)
 document["upper"].bind("change",check_macs)
 </script>
+<div id="container",class="container",style="display:flex; flex-direction: row; align-items: center; justify-content: center; width: 340px; margin-top: 15px;">
 <div style="float:left;width=300px;border-color:black">
     <label for="macs">MACs:<br>
         <textarea id="macs" cols='16' rows='10'">aabbccddeeff</textarea>
@@ -70,6 +73,7 @@ document["upper"].bind("change",check_macs)
 <div style="float:left;width=300px;border-color:black">
     <label for="output">Resultado:<br>
     <textarea id="output" cols='18' rows='10' readonly></textarea></label>
+</div>
 </div>
 </body>
 

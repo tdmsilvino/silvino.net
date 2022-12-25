@@ -27,8 +27,10 @@
 from browser import document
 from browser.html import *
 
+container = DIV(id="container",Class="container",
+                style="width: 340px; margin-top: 15px;")
 form = FORM()
-form <= H1("Escolha uma Cor")
+form <= H1("Pick a Color")
 red = [INPUT(id="red", value="red", name="color", type="radio"),SPAN("Red")]
 green = [INPUT(id="green", value="green", name="color", type="radio"),SPAN("Green")]
 blue = [INPUT(id="blue", value="blue", name="color", type="radio"),SPAN("Blue")]
@@ -36,7 +38,8 @@ form <= LABEL(red)
 form <= LABEL(green)
 form <= LABEL(blue)
 form <= DIV(id="result",style = {"width" : "200px", "height" : "200px", "border" : "2px solid gray"})
-document <= form
+container <= form
+document <= container
 
 
 def change_color(event):

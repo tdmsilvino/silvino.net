@@ -6,8 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
@@ -16,14 +15,15 @@
   <body>
     <py-config>
       packages = ["fast_html "]
-    </py-config>>
+    </py-config>
+    <div class="container",style="width: 340px; margin-top: 15px;">
     <form>
       <label><span>Valor 1: </span><input id="valor1" type="number" value="0"></label><br>
       <label><span>Valor 2: </span><input id="valor2" type="number" value="0"></label><br>
       <input id="button" type="button" py-click="calc()" value="OK"><br>
       <div id="result"></div>
     </form>
-
+    </div>
   <py-script>
     from fast_html import *
     def calc():
@@ -51,4 +51,6 @@
       result.element.innerHTML += render(para)
   </py-script>
   </body>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>

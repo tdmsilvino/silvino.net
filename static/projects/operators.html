@@ -25,6 +25,8 @@
 from browser import document
 from browser.html import *
 
+container = DIV(id="container",Class="container",
+                style="width: 340px; margin-top: 15px;")
 form = FORM()
 form <= H1("Operações Matemáticas")
 form <= LABEL("Valor 1: ", **{"for": "valor1"})
@@ -35,7 +37,8 @@ form <= INPUT(value="0", id="valor2", type="number")
 form <= INPUT(value="OK", type="button", id="button")
 form <= BR()
 form <= DIV(id="result")
-document <= form
+container <= form
+document <= container
 
 
 def calc(event):

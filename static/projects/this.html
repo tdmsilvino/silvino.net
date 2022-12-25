@@ -18,10 +18,15 @@
 import codecs
 import this
 from browser import document, html
+from browser.html import *
 
 text = codecs.decode(this.s, "rot13")
 
-document <= html.BLOCKQUOTE(text.replace("\n","<br>"))
+container = DIV(id="container",Class="container",
+                style="width: 340px; margin-top: 15px;")
+container <= PRE("import this")
+container <= BLOCKQUOTE(text.replace("\n","<br>"))
+document <= container
 </script>
 
 
