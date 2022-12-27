@@ -52,26 +52,32 @@ document["format"].bind("change",check_macs)
 document["upper"].bind("change",check_macs)
 </script>
 <div id="container",class="container",style="display:flex; flex-direction: row; align-items: center; justify-content: center; width: 340px; margin-top: 15px;">
+<h2>Change MAC Address Format</h2>
 <div style="float:left;width=300px;border-color:black">
     <label for="macs">MACs:<br>
-        <textarea id="macs" cols='16' rows='10'">aabbccddeeff</textarea>
+        <textarea id="macs" cols='16' rows='10'">aabbccddeeff
+aa-bb-cc-dd-ee-ff
+aa:bb:cc:dd:ee:ff
+aab.bcc.dde.eff
+</textarea>
 </div>
 <div style="float:left;width=300px;border-color:black;margin: 15px;">
-    <label for="format"><span>Separador:</span><br>
+    <label for="format"><span>Separator:</span><br>
     <select name="format" id="format">
-		<option value=".">. ponto</option>
-		<option value=":">: dois-pontos</option>
-		<option value="-">- traço</option>
+        <option value=""></option>
+		<option value=".">. dot</option>
+		<option value=":">: colon</option>
+		<option value="-">- dash</option>
 	</select>
     </label>
     <br>
     <label>
-        <span>Maiúsculas</span>
+        <span>Uppercase</span>
         <input type="checkbox" value="upper" name="upper" id="upper">
     </label>
 </div>
 <div style="float:left;width=300px;border-color:black">
-    <label for="output">Resultado:<br>
+    <label for="output">Results:<br>
     <textarea id="output" cols='18' rows='10' readonly></textarea></label>
 </div>
 </div>

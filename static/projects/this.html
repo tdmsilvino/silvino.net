@@ -24,7 +24,7 @@ text = codecs.decode(this.s, "rot13")
 
 container = DIV(id="container",Class="container",
                 style="width: 340px; margin-top: 15px;")
-container <= PRE("import this")
+container <= PRE("python -m this")
 container <= BLOCKQUOTE(text.replace("\n","<br>"))
 document <= container
 </script>
