@@ -23,9 +23,9 @@ from browser.html import *
 text = codecs.decode(this.s, "rot13")
 
 container = DIV(id="container",Class="container",
-                style="width: 340px; margin-top: 15px;")
+                style="margin-top: 15px;")
 container <= PRE("python -m this")
-container <= BLOCKQUOTE(text.replace("\n","<br>"))
+container <= BLOCKQUOTE(text.replace("\n","<br>"),style="border-color:lightblue;")
 document <= container
 </script>
 
