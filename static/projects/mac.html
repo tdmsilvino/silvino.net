@@ -11,6 +11,38 @@ src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
 <script type="text/javascript"
 src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
 </script>
+<style>
+    div {
+        box-sizing: border-box;
+        float:left;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center
+    }
+    .content {
+        padding-left: 10px;
+        width: 50%;
+        height: 200px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .selector {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .page_title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
 </head>
 
 <body onload="brython()">
@@ -51,18 +83,21 @@ def check_macs(ev):
 document["format"].bind("change",check_macs)
 document["upper"].bind("change",check_macs)
 </script>
-<div id="container",class="container",style="display:flex; flex-direction: row; align-items: center; justify-content: center; width: 340px; margin-top: 15px;">
-<h2>Change MAC Address Format</h2>
-<div style="float:left;width=300px;border-color:black">
+<div id="container", class="container">
+<div class="page_title">
+    <h2>Change MAC Address Format</h2>
+</div>
+<div class="content">
     <label for="macs">MACs:<br>
-        <textarea id="macs" cols='16' rows='10'">aabbccddeeff
+        <textarea id="macs" cols='18' rows='10'">aabbccddeeff
 aa-bb-cc-dd-ee-ff
 aa:bb:cc:dd:ee:ff
 aab.bcc.dde.eff
 </textarea>
 </div>
-<div style="float:left;width=300px;border-color:black;margin: 15px;">
-    <label for="format"><span>Separator:</span><br>
+<div class="content selector">
+    <p>Select the new format</p>
+    <label for="format"><span>Separator:</span>
     <select name="format" id="format">
         <option value=""></option>
 		<option value=".">. dot</option>
@@ -76,9 +111,11 @@ aab.bcc.dde.eff
         <input type="checkbox" value="upper" name="upper" id="upper">
     </label>
 </div>
-<div style="float:left;width=300px;border-color:black">
+<div class="content">
     <label for="output">Results:<br>
     <textarea id="output" cols='18' rows='10' readonly></textarea></label>
+</div>
+<div class="content">
 </div>
 </div>
 </body>
