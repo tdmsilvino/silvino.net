@@ -11,12 +11,13 @@ publishDir = "public"
     description = "Idiomas, Software Livre, Redes, e Automação"
     githubUsername = "tdmsilvino"
     accent = "black"
+    profilePic = "/img/thiago.jpg"
     showBorder = true
     backgroundColor = "white"
     font = "Roboto" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "solarized-dark"
-    highlightLanguages = ["go", "python", "bash", "javascript"]
+    highlightLanguages = [ "python", "bash" ]
 
 [Permalinks]
  posts = "/:year/:month/:day/:filename/"
