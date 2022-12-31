@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
 <script type="text/javascript"
 src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
 </script>
@@ -30,6 +32,7 @@ src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 2rem;
     }
     .selector {
         flex-direction: column;
@@ -42,12 +45,16 @@ src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
         align-items: center;
         justify-content: center;
     }
+
+    h2 {
+        color:rgb(9, 81, 139);
+    }
 </style>
 </head>
 
 <body onload="brython()">
 <script type="text/python">
-from browser import alert, document, html
+from browser import alert, document, html, window
 
 def mac_format(entry,separator):
     mac = []
@@ -85,17 +92,20 @@ document["upper"].bind("change",check_macs)
 </script>
 <div id="container", class="container">
 <div class="page_title">
-    <h2>Change MAC Address Format</h2>
+    <h2>MAC Address Format</h2>
 </div>
 <div class="content">
+    <form class="pure-form">
     <label for="macs">MACs:<br>
-        <textarea id="macs" cols='18' rows='10'">aabbccddeeff
+        <textarea id="macs" cols='18' rows='10' spellcheck="false">aabbccddeeff
 aa-bb-cc-dd-ee-ff
 aa:bb:cc:dd:ee:ff
 aab.bcc.dde.eff
 </textarea>
+</form>
 </div>
 <div class="content selector">
+    <form class="pure-form">
     <p>Select the new format</p>
     <label for="format"><span>Separator:</span>
     <select name="format" id="format">
@@ -107,13 +117,16 @@ aab.bcc.dde.eff
     </label>
     <br>
     <label>
-        <span>Uppercase</span>
         <input type="checkbox" value="upper" name="upper" id="upper">
+        <span>Uppercase</span>
     </label>
+    </form>
 </div>
 <div class="content">
+    <form class="pure-form">
     <label for="output">Results:<br>
-    <textarea id="output" cols='18' rows='10' readonly></textarea></label>
+    <textarea id="output" cols='18' rows='10' spellcheck="false"></textarea></label>
+    </form>
 </div>
 <div class="content">
 </div>
