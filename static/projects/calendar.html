@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/purecss@3.0.0/build/base-min.css,npm/purecss@3.0.0/build/buttons-min.css,npm/purecss@3.0.0/build/forms-min.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .month {
+            max-width: 400px;
+        }
+
+        .month, .week_header {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .month_name, .week_header {
+            grid-column: 1 / 8;
+        }
+
+        .month div {
+            border-bottom: 1px solid black;
+            height: 20px;
+            text-align: center;
+        }
+
+        .week_header {
+            background-color: steelblue;
+            color: white;
+        }
+
+        .zero {
+            color: white;
+        }
+    </style>
+    
+</head>
+
+<body onload="brython()">
+
+<script type="text/python">
+from browser import document
+from browser.html import *
+import calendar
+import datetime
+
+form = FORM(Class="pure-form")
+form <= LEGEND('Calendar 2023')
+form <= LABEL("Month: ", For="months")
+months = SELECT(name = "months", id = "months", autofocus=True)
+for index, month in enumerate(calendar.month_name):
+    months <= OPTION(month, value=index)
+
+form <= months
+document <= form
+document <= DIV(id='output')
+
+def update_calendar(ev):
+    output = document['output']
+    output.clear()
+
+    month_number = int(ev.target.value)
+    if month_number:
+        #month_name = calendar.month_name[month_number]
+        calendar.setfirstweekday(6)
+        weeks = calendar.monthcalendar(2023,month_number)
+
+        cmonth = DIV(Class="month")
+        #cmonth <= DIV(month_name,Class="month_name")
+        w_header = DIV(Class="week_header")
+        for weekday in calendar.weekheader(2).split():
+            w_header <= DIV(weekday)
+        cmonth <= w_header
+        for week in weeks:
+            for day in week:
+                if day == 0:
+                    cmonth <= DIV(day, Class="zero")
+                else:
+                    cmonth <= DIV(day)
+        output <= cmonth
+
+document["months"].bind('change',update_calendar)
+</script>
+
+
+</body>
+
+</html>
