@@ -16,6 +16,11 @@
             box-sizing: border-box;
         }
 
+        .container {
+            display: grid;
+            justify-content: center;
+        }
+
         .month {
             max-width: 400px;
         }
@@ -30,7 +35,7 @@
         }
 
         .month div {
-            border-bottom: 1px solid black;
+            border: 1px solid steelblue;
             height: 20px;
             text-align: center;
         }
@@ -55,26 +60,39 @@ from browser.html import *
 import calendar
 import datetime
 
+container = DIV(Class="container")
 form = FORM(Class="pure-form")
-form <= LEGEND('Calendar 2023')
+form <= LABEL('Calendar ', For="year")
+form <= INPUT(id="year",type="number",value="2023",
+        min="1",max="9999",style="width: 80px;")
 form <= LABEL("Month: ", For="months")
 months = SELECT(name = "months", id = "months", autofocus=True)
 for index, month in enumerate(calendar.month_name):
-    months <= OPTION(month, value=index)
+    if index != 0:
+        months <= OPTION(month, value=index)
 
 form <= months
-document <= form
-document <= DIV(id='output')
+container <= form
+container <= DIV(id='output')
+document <= container
 
-def update_calendar(ev):
+def get_month(ev):
+    month_n = int(ev.target.value)
+    year_n = int(document["year"].value)
+    update_calendar(year_n, month_n)
+
+def get_year(ev):
+    year_n = int(ev.target.value)
+    month_n = int(document["months"].value)
+    update_calendar(year_n, month_n)
+
+def update_calendar(year_number, month_number):
     output = document['output']
     output.clear()
-
-    month_number = int(ev.target.value)
     if month_number:
         #month_name = calendar.month_name[month_number]
         calendar.setfirstweekday(6)
-        weeks = calendar.monthcalendar(2023,month_number)
+        weeks = calendar.monthcalendar(year_number,month_number)
 
         cmonth = DIV(Class="month")
         #cmonth <= DIV(month_name,Class="month_name")
@@ -90,7 +108,9 @@ def update_calendar(ev):
                     cmonth <= DIV(day)
         output <= cmonth
 
-document["months"].bind('change',update_calendar)
+document["months"].bind('change',get_month)
+document["year"].bind('change',get_year)
+update_calendar(2023, 1)
 </script>
 
 
