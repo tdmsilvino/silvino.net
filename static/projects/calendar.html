@@ -19,10 +19,14 @@
         .container {
             display: grid;
             justify-content: center;
+            width: 90vw;
+            margin-left: 5vw;
+            grid-template-columns: 1fr;
         }
 
-        .month {
-            max-width: 400px;
+        .container h1 {
+            color: darkslategray;
+            text-align: center;
         }
 
         .month, .week_header {
@@ -61,8 +65,9 @@ import calendar
 import datetime
 
 container = DIV(Class="container")
+container <= H1("Calendar")
 form = FORM(Class="pure-form")
-form <= LABEL('Calendar ', For="year")
+form <= LABEL('Year: ', For="year")
 form <= INPUT(id="year",type="number",value="2023",
         min="1",max="9999",style="width: 80px;")
 form <= LABEL("Month: ", For="months")
