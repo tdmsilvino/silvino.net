@@ -16,12 +16,15 @@
             box-sizing: border-box;
         }
 
-        .container {
+        .grid {
             display: grid;
+            width: 100%;
             justify-content: center;
-            width: 90vw;
-            margin-left: 5vw;
-            grid-template-columns: 1fr;
+        } 
+
+        .container {
+            max-width: 500px;
+            margin: 2vw;
         }
 
         .container h1 {
@@ -32,6 +35,7 @@
         .month, .week_header {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
+
         }
 
         .month_name, .week_header {
@@ -49,6 +53,12 @@
             color: white;
         }
 
+        form {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+
         .zero {
             color: white;
         }
@@ -64,6 +74,7 @@ from browser.html import *
 import calendar
 import datetime
 
+grid = DIV(Class="grid")
 container = DIV(Class="container")
 container <= H1("Calendar")
 form = FORM(Class="pure-form")
@@ -79,7 +90,8 @@ for index, month in enumerate(calendar.month_name):
 form <= months
 container <= form
 container <= DIV(id='output')
-document <= container
+grid <= container
+document <= grid
 
 def get_month(ev):
     month_n = int(ev.target.value)
