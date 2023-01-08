@@ -19,6 +19,6 @@ I﻿n the new [Projects](https://silvino.net/projects/) section you will find:
 - a simple [calendar](https://silvino.net/projects/calendar.html). Python modules: calendar and datetime.
 - an [IP Subnet Calculator](https://silvino.net/projects/ip_calc/ip_calc.html). Python module: ipaddress.
 
-If you have Python in your computer, you can run the IP Subnet Calculator in your OS by downloading the script [ip_calc.py](https://silvino.net/projects/ip_calc/ip_calc.py) to your machine. You can also clone the [ip_calc](https://github.com/tdmsilvino/ip_calc) reposity from my Github and track the changes as I add more functionalities to the script.
+If you have Python in your computer, you can run the IP Subnet Calculator in your OS by downloading the script [ip_calc.py](https://silvino.net/projects/ip_calc/ip_calc.py) to your machine. You can also clone the [ip_calc](https://github.com/tdmsilvino/ip_calc) reposity from my Github, and track the changes as I add more functionalities to the script.
 
 I﻿ hope you enjoy!
