@@ -13,7 +13,7 @@ I will use this section to experiment with Python and some web technologies. My 
 
 I﻿n the new [Projects](https://silvino.net/projects/) section you will find:
 
-- a simple [calculator](https://silvino.net/projects/calculadora.html) 
+- a simple [calculator](https://silvino.net/projects/calculadora.html)
 
 - a tool to convert between the various [MAC Addresses Formats](https://silvino.net/projects/mac.html)
 - a simple [calendar](https://silvino.net/projects/calendar.html). Python modules: calendar and datetime.
