@@ -12,6 +12,7 @@ I﻿ have added a new section in the site with some simple scripts built with Py
 I will use this section to experiment with Python and some web technologies. My main goal is to the write the scripts in Python and make them usable in the browser.
 
 I﻿n the new [Projects](https://silvino.net/projects/) section you will find:
+
 - a simple [calculator](https://silvino.net/projects/calculadora.html) 
 
 - a tool to convert between the various [MAC Addresses Formats](https://silvino.net/projects/mac.html)
