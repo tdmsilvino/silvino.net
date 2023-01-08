@@ -110,7 +110,8 @@ def update_calendar(year_number, month_number):
 
 document["months"].bind('change',get_month)
 document["year"].bind('change',get_year)
-update_calendar(2023, 1)
+today = datetime.date.today()
+update_calendar(today.year, today.month)
 </script>
 
 
